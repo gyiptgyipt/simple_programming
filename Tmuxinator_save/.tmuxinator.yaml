@@ -1,0 +1,36 @@
+name: tb3_humble
+root: ~
+
+windows:
+  - hardware driver:
+      panes:
+        - |
+          source /opt/ros/humble/setup.bash
+          ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+
+  - Lidar: 
+      root: ~/
+      layout: 0a91,122x31,0,0{61x31,0,0,0,60x31,62,0,1}
+      panes:
+        - source /opt/ros/humble/setup.bash
+        - clear; sleep 5; source ~/.bashrc; ros2 launch rom2109_controller rplidar.launch.py
+        - clear; cowsay "welcome idiot" 
+
+  - Slam_toolbox:
+      panes:
+        - |
+          source /opt/ros/humble/setup.bash
+          ros2 launch slam_toolbox online_async_launch.py
+          
+
+  - Navigation:
+      panes:
+        - |
+          source /opt/ros/humble/setup.bash
+          ros2 launch nav2_bringup navigation_launch.py
+
+  - Web_server:
+      panes:
+        - |
+          source /opt/ros/humble/setup.bash
+          cd ~/ROS_Flutter_Gui_App/backend/build/install/bin/; ./start.sh
