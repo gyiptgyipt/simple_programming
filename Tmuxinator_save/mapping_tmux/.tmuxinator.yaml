@@ -29,11 +29,11 @@ windows:
           ros2 launch slam_toolbox online_async_launch.py
           
 
-  - Navigation:
-      panes:
-        - |
-          source /opt/ros/humble/setup.bash
-          ros2 launch nav2_bringup navigation_launch.py
+  # - Navigation:
+  #     panes:
+  #       - |
+  #         source /opt/ros/humble/setup.bash
+  #         ros2 launch nav2_bringup navigation_launch.py
 
   - Web_server:
       panes:
